@@ -1,0 +1,20 @@
+$colors: (
+    primary: #005DFF,
+    accent: #005DFF
+);
+
+@function color($color-type) {
+    @return map-get($colors, $color-type)
+}
+
+$desktop: 840px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+body {
+    background-color: color(primary)
+}
