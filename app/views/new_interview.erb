@@ -29,16 +29,16 @@
       <h1>Please fill the following to make a new interview:</h1>
       <form method="POST" action="/organizer/add-interview">
         <label class="new-text" for="company">Company:</label>
-        <input class="form-input" type="text" name="company">
+        <input class="form-input" type="text" name="company" required>
 
         <label class="form-text" for="position">Position:</label>
-        <input class="form-input" type="text" name="position">
+        <input class="form-input" type="text" name="position" required>
 
         <label class="new-text" for="date">Date of Interview:</label>
-        <input class="form-input" type="date" name="date">
+        <input class="form-input" type="date" name="date" required>
 
         <label class="new-text" for="time">Time of Interview:</label>
-        <input class="form-input" type="time" name="time">
+        <input class="form-input" type="time" name="time" required>
 
         <input type="submit" value="Add Interview">
       </form>

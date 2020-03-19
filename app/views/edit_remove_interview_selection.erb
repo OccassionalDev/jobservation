@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav>
+    <ul id="nav-bar">
+      <li>
+        <a href="/organizer" class="nav-bar-link">Home</a>
+      </li>
+
+      <li>
+        <a href="/edit-account" class="nav-bar-link">Edit Account</a>
+      </li>
+
+      <li>
+          <p id="welcome-user">Welcome, <%= current_user.name %>!</p>
+      </li>
+
+      <li>
+          <a href="/logout" class="nav-bar-link">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  
+  <header>
+      <h1>Please select a interview to edit or remove:</h1>
+  </header>
+
+  <section class="interview-selection">
+    <table>
+      <tr>
+        <th></th>
+        <th>Company</th>
+        <th>Position</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+
+      <% @interviews.each do |i| %>
+        <tr>
+            <td>
+              <a href="/organizer/edit-remove-interview/<%= i.id %>">Edit</a>
+              
+              <form action="/organizer/edit-remove-interview/<%= i.id %>" method="post">
+                  <input id="hidden" type="hidden" name="_method" value="delete">
+                  <input type="submit" value="Remove">
+              </form>
+            </td>
+
+            <td><%= i.company %></td>
+            <td><%= i.position %></td>
+            <td><%= i.date %></td>
+            <td><%= i.time %></td>
+        </tr>
+      <% end %>
+    </table>
+  </section>
+
+</body>
+</html>

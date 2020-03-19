@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="nav-bar">
+        <li>
+          <a href="/organizer" class="nav-bar-link">Home</a>
+        </li>
+  
+        <li>
+          <a href="/edit-account" class="nav-bar-link">Edit Account</a>
+        </li>
+  
+        <li>
+            <p id="welcome-user">Welcome, <%= current_user.name %>!</p>
+        </li>
+  
+        <li>
+            <a href="/logout" class="nav-bar-link">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <header>
+        <h1>Fill out the following to edit:</h1>
+    </header>
+
+    <section class="edit-form">
+        <form action="/organizer/edit-remove-interview/<%= @interview.id %>" method="POST">
+            <input id="hidden" type="hidden" name="_method" value="patch">
+            
+            <label class="edit-label" for="company">Company:</label>
+            <input class="edit-input" type="text" name="company" value="<%= @interview.company %>" required>
+
+            <label class="edit-label" for="position">Position:</label>
+            <input class="edit-input" type="text" name="position" value="<%= @interview.position %>" required>
+
+            <label class="edit-label" for="date">Date:</label>
+            <input class="edit-input" type="date" name="date" value="<%= @interview.date %>" required>
+
+            <label class="edit-label" for="time">Time:</label>
+            <input class="edit-input" type="time" name="time" value="<%= @interview.time %>" required>
+
+            <input type="submit" value="Save Changes">
+        </form>
+    </section>
+</body>
+</html>
