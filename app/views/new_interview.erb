@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul id="nav-bar">
+          <li>
+            <a href="/organizer" class="nav-bar-link">Home</a>
+          </li>
+    
+          <li>
+            <a href="/edit-account" class="nav-bar-link">Edit Account</a>
+          </li>
+
+          <li>
+              <p id="welcome-user">Welcome, <%= current_user.name %>!</p>
+          </li>
+
+          <li>
+              <a href="/logout" class="nav-bar-link">Logout</a>
+          </li>
+        </ul>
+      </nav>
+
+      <h1>Please fill the following to make a new interview:</h1>
+      <form method="POST" action="/organizer">
+        <label class="new-text" for="company">Company:</label>
+        <input class="form-input" type="text" name="company">
+
+        <label class="form-text" for="position">Position:</label>
+        <input class="form-input" type="text" name="company">
+
+        <label class="new-text" for="date">Date of Interview:</label>
+        <input class="form-input" type="date" name="date">
+
+        <label class="new-text" for="time">Time of Interview:</label>
+        <input class="form-input" type="time" name="time">
+
+        <input type="submit" value="Add Interview">
+      </form>
+</body>
+</html>
