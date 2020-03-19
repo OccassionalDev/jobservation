@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul id="nav-bar">
+          <li>
+            <a href="/" class="nav-bar-link">Home</a>
+          </li>
+    
+          <li>
+            <a href="/sign-up" class="nav-bar-link">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+    
+      <div class="login-box">
+        <h1>Welcome Back!</h1>
+
+        <div class="login-form">
+            <form action="/login" method="POST">
+                <label class="login-text" for="email">Email:</label>
+                <input class="input-box" type="email" name="email" required>
+
+                <label class="login-text" for="password">Password:</label>
+                <input class="input-box" type="password" name="password" required>
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+      </div>
+    
+      <footer>
+        <p id="footer-text">All Rights Reserved © Jobservation 2020 | Made by Erica Schimmel</p>
+      </footer>
+</body>
+</html>
