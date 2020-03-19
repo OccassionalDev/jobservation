@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_204225) do
+ActiveRecord::Schema.define(version: 2020_03_19_223020) do
+
+  create_table "applications", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "company"
+    t.string "position"
+    t.string "date"
+    t.string "time"
+  end
 
   create_table "interviews", force: :cascade do |t|
     t.integer "user_id"
