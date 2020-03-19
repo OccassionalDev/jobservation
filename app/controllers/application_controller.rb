@@ -33,14 +33,16 @@ class ApplicationController < Sinatra::Base
 
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id 
-            redirect '/organizer'
+            redirect to '/organizer'
 
         else 
-            redirect '/login-failure'
+            redirect to '/login-failure'
         end 
     end 
 
     get '/organizer' do 
+        current_user = User.find(session[:user_id])
+        @interviews = Interview.all.select { |i| i.user_id == current_user.id}
         erb :organizer 
     end 
 

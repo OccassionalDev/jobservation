@@ -35,11 +35,11 @@
                   </li>
 
                   <li>
-                    <a href="/interviews/add">Add Interview</a>
+                    <a href="/organizer/add-interview">Add Interview</a>
                   </li>
 
                   <li>
-                      <a href="/interviews/edit-remove">Edit/Remove</a>
+                      <a href="/organizer/edit-remove-interview">Edit/Remove</a>
                   </li>
               </ul>
               
@@ -50,21 +50,30 @@
                     <th>Date</th>
                     <th>Time</th>
                 </tr>
+
+                <% @interviews.each do |i|%>
+                    <tr>
+                        <td><%= i.company %></td>
+                        <td><%= i.position %></td>
+                        <td><%= i.date %></td>
+                        <td><%= i.time %></td>
+                    </tr>
+                <% end %>
             </table>
           </section>
 
           <section class="applications">
             <ul>
                 <li>
-                  <h4>Upcoming Interviews</h4>
+                  <h4>Applications</h4>
                 </li>
 
                 <li>
-                  <a href="/applications/add">Add Interview</a>
+                  <a href="/organizer/add-application">Add Interview</a>
                 </li>
 
                 <li>
-                    <a href="/applications/edit-remove">Edit/Remove</a>
+                    <a href="/organizer/edit-remove-application">Edit/Remove</a>
                 </li>
             </ul>
 
