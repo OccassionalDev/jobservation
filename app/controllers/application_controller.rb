@@ -43,7 +43,28 @@ class ApplicationController < Sinatra::Base
     get '/organizer' do 
         current_user = User.find(session[:user_id])
         @interviews = Interview.all.select { |i| i.user_id == current_user.id}
+        @applications = Application.all.select { |a| a.user_id == current_user.id}
         erb :organizer 
+    end 
+
+    get '/edit-account' do 
+        erb :edit_account
+    end 
+
+    patch '/edit-account' do 
+        user = User.find(session[:user_id])
+
+        if user.authenticate(params[:current_pass])
+            @current_user = User.find(session[:user_id])
+
+            @current_user.name = params[:name]
+            @current_user.email = params[:email]
+            @current_user.password = params[:password]
+            
+            @current_user.save 
+
+            redirect to '/organizer'
+        end 
     end 
 
     get '/login-failure' do 

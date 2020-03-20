@@ -20,7 +20,7 @@ class JobApplicationController < ApplicationController
 
     get '/organizer/edit-remove-application' do 
         current_user = User.find(session[:user_id])
-        @application = Application.all.select { |i| i.user_id == current_user.id}
+        @applications = Application.all.select { |i| i.user_id == current_user.id}
         
         erb :'/applications/edit_remove_application_selection'
     end 

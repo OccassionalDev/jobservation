@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_03_19_223020) do
     t.string "company"
     t.string "position"
     t.string "date"
-    t.string "time"
+    t.string "status"
   end
 
   create_table "interviews", force: :cascade do |t|

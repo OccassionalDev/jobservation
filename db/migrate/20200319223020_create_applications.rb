@@ -5,7 +5,7 @@ class CreateApplications < ActiveRecord::Migration[5.2]
       t.string :company
       t.string :position
       t.string :date 
-      t.string :time
+      t.string :status
     end 
   end
 end
