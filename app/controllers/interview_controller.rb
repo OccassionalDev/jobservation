@@ -1,6 +1,6 @@
 class InterviewController < ApplicationController   
     get '/organizer/add-interview' do
-        erb :new_interview 
+        erb :'/interviews/new_interview'
     end 
 
     post '/organizer/add-interview' do 
@@ -22,12 +22,12 @@ class InterviewController < ApplicationController
         current_user = User.find(session[:user_id])
         @interviews = Interview.all.select { |i| i.user_id == current_user.id}
         
-        erb :edit_remove_interview_selection
+        erb :'/interviews/edit_remove_interview_selection'
     end 
 
     get '/organizer/edit-remove-interview/:id' do 
         @interview = Interview.find(params[:id])
-        erb :edit_interview 
+        erb :'/interviews/edit_interview'
     end 
 
     patch '/organizer/edit-remove-interview/:id' do
