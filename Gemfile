@@ -9,7 +9,7 @@ gem "activerecord", "~> 5.2"
 gem "sinatra-activerecord"
 gem "require_all"
 gem "bcrypt", "~> 3.1.7"
-gem "sysrandom"
+#gem "sysrandom"
 
 group :development do 
     gem "shotgun"

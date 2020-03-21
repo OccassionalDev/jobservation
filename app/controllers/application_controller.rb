@@ -21,7 +21,14 @@ class ApplicationController < Sinatra::Base
         if user.save 
             session[:user_id] = user.id
             redirect to '/login'
+
+        else 
+            redirect to '/sign-up-failure'
         end 
+    end 
+
+    get '/sign-up-failure' do 
+        erb :sign_up_failure
     end 
 
     get '/login' do 
