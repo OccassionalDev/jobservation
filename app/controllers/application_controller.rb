@@ -66,12 +66,22 @@ class ApplicationController < Sinatra::Base
 
             @current_user.name = params[:name]
             @current_user.email = params[:email]
-            @current_user.password = params[:password]
-            
+
+            if params[:password] != ""
+             @current_user.password = params[:password]
+            end 
+
             @current_user.save 
 
             redirect to '/organizer'
+
+        else 
+            redirect to '/edit-account-failure'
         end 
+    end 
+
+    get '/edit-account-failure' do 
+        erb :edit_account_failure
     end 
 
     get '/login-failure' do 
@@ -86,10 +96,6 @@ class ApplicationController < Sinatra::Base
     helpers do 
         def current_user 
             User.find(session[:user_id])
-        end 
-
-        def logged_in?
-            !!current_user 
         end 
     end 
 end 
