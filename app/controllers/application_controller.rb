@@ -68,11 +68,13 @@ class ApplicationController < Sinatra::Base
             @current_user.email = params[:email]
 
             if params[:password] != ""
-             @current_user.password = params[:password]
+                @current_user.password = params[:password]
+
+            else 
+                @current_user.password = params[:current_pass]
             end 
 
             @current_user.save 
-
             redirect to '/organizer'
 
         else 

@@ -32,13 +32,8 @@ nav .nav-bar-link {
 }
 
 nav #welcome-user {
-  text-align: right;
-  line-height: 45px;
-}
-
-nav #logout-link {
-  text-align: right;
-  line-height: 45px;
+  position: relative;
+  bottom: 25px;
 }
 
 body {

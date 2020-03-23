@@ -20,14 +20,12 @@
           </li>
 
           <li>
-            <p id="welcome-user">Welcome, <%= current_user.name %>!</p>
-          </li>
-
-          <li>
-            <a href="/logout" id="logout-link">Logout</a>
+            <a href="/logout" id="logout-link" class="nav-bar-link">Logout</a>
           </li>
         </ul>
       </nav>
+
+      <p id="welcome-user">Welcome, <%= current_user.name %>!</p>
 
       <main>
           <section class="interviews">
