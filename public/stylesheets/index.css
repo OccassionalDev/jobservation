@@ -4,16 +4,19 @@
 }
 
 #nav-bar {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: auto;
+  position: relative;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   list-style: none;
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.25em;
   background: #30A488;
 }
 
@@ -23,40 +26,75 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  line-height: 50px;
+  line-height: 45px;
   padding: .75em;
   color: #FFFFFF;
 }
 
 body {
-  background-color: #E5E5E5;
+  background-color: rgba(45, 180, 155, 0.212);
 }
 
 .welcome-info {
+  height: 65%;
   text-align: center;
-  padding-top: 2em;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  width: 65%;
+  background: #F8F8F8;
+  border-radius: 18px;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .welcome-info h1 {
-  font-size: 4em;
+  font-size: 3em;
   font-weight: bold;
   margin-bottom: 1em;
 }
 
 .welcome-info p {
   font-size: 2em;
-  width: 65%;
+  width: 75%;
   margin: 1em auto;
 }
 
 .welcome-info #sign-up-button {
   background: #2ED16F;
-  color: black;
-  font-size: 1.75em;
+  color: white;
+  font-size: 1.5em;
   padding: 1em;
   margin: 1em 0;
   display: inline-block;
   border-radius: 18px;
   text-decoration: none;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 50px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #30A488;
+  color: #FFFFFF;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+footer p {
+  font-size: 1em;
+  padding-left: 2em;
 }
 /*# sourceMappingURL=index.css.map */
