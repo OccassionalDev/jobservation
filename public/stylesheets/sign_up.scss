@@ -1,0 +1,115 @@
+$colors: (
+    nav-bg: #30A488,
+    nav-text: #FFFFFF,
+    box-bg: #F8F8F8,
+    bg: rgba(45, 180, 155, 0.212)
+);
+
+@function color($color-type) {
+    @return map-get($colors, $color-type);
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+
+#nav-bar {
+    width: 100%;
+    display: flex;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    font-size: 1.25em;
+    background: color(nav-bg);
+}
+
+.nav-bar-link {
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    line-height: 45px;
+    padding: .75em;
+    color: color(nav-text);
+}
+
+body {
+    background-color: color(bg);
+}
+
+.sign-up-box {
+    height: 25%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 35%;
+    background: color(box-bg);
+    border-radius: 18px;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    h1, h2 {
+        text-align: center;
+    }
+
+    #invalid-email {
+        text-align: center;
+        color: red;
+    }
+
+    .sign-up-form {
+        width: 45%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        left: 15px;
+
+        input[type=password] {
+            position: absolute;
+        }
+
+        input[type=submit] {
+            background: #2ED16F;
+            color: white;
+            position: relative;
+            top: 30px;
+            bottom: 10px;
+            left: 45px;
+            border: none;
+            font-size: 1em;
+            padding: 1em;
+            margin: 1em 0;
+            display: inline-block;
+            border-radius: 18px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 50px;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: color(nav-bg);
+    color: color(nav-text);
+    align-content: center;
+
+    p {
+        font-size: 1em;
+        padding-left: 2em;
+    }
+  }
