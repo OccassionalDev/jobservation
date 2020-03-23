@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jobservation - Organizer</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/organizer.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -18,11 +20,11 @@
           </li>
 
           <li>
-              <p id="welcome-user">Welcome, <%= current_user.name %>!</p>
+            <p id="welcome-user">Welcome, <%= current_user.name %>!</p>
           </li>
 
           <li>
-              <a href="/logout" class="nav-bar-link">Logout</a>
+            <a href="/logout" id="logout-link">Logout</a>
           </li>
         </ul>
       </nav>
@@ -43,22 +45,27 @@
                   </li>
               </ul>
               
-            <table id="upcoming-interviews">
-                <tr>
-                    <th>Company</th>
-                    <th>Position</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                </tr>
 
-                <% @interviews.each do |i| %>
-                    <tr>
-                        <td><%= i.company %></td>
-                        <td><%= i.position %></td>
-                        <td><%= i.date %></td>
-                        <td><%= i.time %></td>
-                    </tr>
-                <% end %>
+            <% if @interviews != [] %>
+              <table id="upcoming-interviews">
+                  <tr>
+                      <th>Company</th>
+                      <th>Position</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                  </tr>
+
+                  <% @interviews.each do |i| %>
+                      <tr>
+                          <td><%= i.company %></td>
+                          <td><%= i.position %></td>
+                          <td><%= i.date %></td>
+                          <td><%= i.time %></td>
+                      </tr>
+                  <% end %>
+            <% else %> 
+              <p id="no-interview-text">You have no upcoming interviews, to make a interview, click on the add interview button.</p>
+            <% end %>
             </table>
           </section>
 
@@ -77,22 +84,26 @@
                 </li>
             </ul>
 
-            <table id="all-applications">
-                <tr>
-                    <th>Company</th>
-                    <th>Position</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                </tr>
-
-                <% @applications.each do |a| %>
+            <% if @applications != [] %>
+              <table id="all-applications">
                   <tr>
-                      <td><%= a.company %></td>
-                      <td><%= a.position %></td>
-                      <td><%= a.date %></td>
-                      <td><%= a.status %></td>
+                      <th>Company</th>
+                      <th>Position</th>
+                      <th>Date</th>
+                      <th>Status</th>
                   </tr>
-              <% end %>
+
+                  <% @applications.each do |a| %>
+                    <tr>
+                        <td><%= a.company %></td>
+                        <td><%= a.position %></td>
+                        <td><%= a.date %></td>
+                        <td><%= a.status %></td>
+                    </tr>
+                  <% end %>
+                <% else %>
+                    <p id="no-application-text">You have no applications recorded, to make a new application, click on the add application button.</p>
+                <% end %>
             </table>
           </section>
       </main>
