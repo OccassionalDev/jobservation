@@ -1,0 +1,114 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+}
+
+#nav-bar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  margin: 0;
+  font-size: 1.25em;
+  background: #30A488;
+}
+
+.nav-bar-link {
+  text-decoration: none;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 45px;
+  padding: .75em;
+  color: #FFFFFF;
+}
+
+body {
+  background-color: rgba(45, 180, 155, 0.212);
+}
+
+.login-box {
+  height: 25%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 35%;
+  background: #F8F8F8;
+  border-radius: 18px;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login-box h1 {
+  text-align: center;
+}
+
+.login-box #invalid-entry {
+  text-align: center;
+  color: red;
+}
+
+.login-box .login-form {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: 15px;
+}
+
+.login-box .login-form input[type=password] {
+  position: absolute;
+}
+
+.login-box .login-form input[type=submit] {
+  background: #2ED16F;
+  color: white;
+  position: relative;
+  top: 30px;
+  bottom: 10px;
+  left: 50px;
+  border: none;
+  font-size: 1em;
+  padding: 1em;
+  margin: 1em 0;
+  display: inline-block;
+  border-radius: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 50px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #30A488;
+  color: #FFFFFF;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+footer p {
+  font-size: 1em;
+  padding-left: 2em;
+}
+/*# sourceMappingURL=login.css.map */
