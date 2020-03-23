@@ -54,38 +54,6 @@ class ApplicationController < Sinatra::Base
         erb :organizer 
     end 
 
-    get '/edit-account' do 
-        erb :edit_account
-    end 
-
-    patch '/edit-account' do 
-        user = User.find(session[:user_id])
-
-        if user.authenticate(params[:current_pass])
-            @current_user = User.find(session[:user_id])
-
-            @current_user.name = params[:name]
-            @current_user.email = params[:email]
-
-            if params[:password] != ""
-                @current_user.password = params[:password]
-
-            else 
-                @current_user.password = params[:current_pass]
-            end 
-
-            @current_user.save 
-            redirect to '/organizer'
-
-        else 
-            redirect to '/edit-account-failure'
-        end 
-    end 
-
-    get '/edit-account-failure' do 
-        erb :edit_account_failure
-    end 
-
     get '/login-failure' do 
         erb :login_failure
     end 
