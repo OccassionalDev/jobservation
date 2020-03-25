@@ -19,7 +19,7 @@
       </nav>
 
       <h1>Please fill the following to add a new application:</h1>
-      <form method="POST" action="/organizer/add-application">
+      <form method="POST" action="/applications/new">
         <label class="new-text" for="company">Company:</label>
         <input class="form-input" type="text" name="company" required>
 
@@ -33,7 +33,7 @@
             <select name="status" id="status-box">
                 <option value="Pending" selected>Pending</option>
                 <option value="Interview to be scheduled">Interview to be Scheduled</option>
-                <option value="Scheuled Interview">Interview Scheduled</option>
+                <option value="Scheduled Interview">Interview Scheduled</option>
             </select>
 
         <input type="submit" value="Add Application">

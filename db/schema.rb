@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_223020) do
+ActiveRecord::Schema.define(version: 2020_03_25_195457) do
 
   create_table "applications", force: :cascade do |t|
     t.integer "user_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_223020) do
     t.string "position"
     t.string "date"
     t.string "time"
+    t.string "notes"
+    t.string "location"
   end
 
   create_table "users", force: :cascade do |t|

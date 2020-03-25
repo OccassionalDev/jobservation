@@ -22,7 +22,7 @@
     </header>
 
     <section class="edit-form">
-        <form action="/organizer/edit-remove-application/<%= @application.id %>" method="POST">
+        <form action="/applications/edit/<%= @application.id %>" method="POST">
             <input id="hidden" type="hidden" name="_method" value="patch">
             
             <label class="edit-label" for="company">Company:</label>

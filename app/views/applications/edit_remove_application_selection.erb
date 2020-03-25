@@ -36,9 +36,9 @@
       <% @applications.each do |a| %>
         <tr>
             <td>
-              <a href="/organizer/edit-remove-application/<%= a.id %>">Edit</a>
+              <a href="/applications/edit/<%= a.id %>">Edit</a>
               
-              <form action="/organizer/edit-remove-application/<%= a.id %>" method="post">
+              <form action="/applications/edit-remove/<%= a.id %>" method="post">
                   <input id="hidden" type="hidden" name="_method" value="delete">
                   <input type="submit" value="Remove">
               </form>

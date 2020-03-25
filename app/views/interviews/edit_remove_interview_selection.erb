@@ -36,9 +36,9 @@
       <% @interviews.each do |i| %>
         <tr>
             <td>
-              <a href="/organizer/edit-remove-interview/<%= i.id %>">Edit</a>
+              <a href="/interviews/edit-remove/<%= i.id %>">Edit</a>
               
-              <form action="/organizer/edit-remove-interview/<%= i.id %>" method="post">
+              <form action="/interviews/edit-remove/<%= i.id %>" method="post">
                   <input id="hidden" type="hidden" name="_method" value="delete">
                   <input type="submit" value="Remove">
               </form>

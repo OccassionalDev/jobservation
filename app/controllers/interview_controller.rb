@@ -1,9 +1,9 @@
 class InterviewController < ApplicationController   
-    get '/organizer/add-interview' do
+    get '/interviews/new' do
         erb :'/interviews/new_interview'
     end 
 
-    post '/organizer/add-interview' do 
+    post '/interviews/new' do 
         @current_user = User.find(session[:user_id])
         @interview = Interview.new(
             :company => params[:company],
@@ -18,19 +18,19 @@ class InterviewController < ApplicationController
         redirect to '/organizer'
     end 
 
-    get '/organizer/edit-remove-interview' do 
+    get '/interviews/edit-remove' do 
         current_user = User.find(session[:user_id])
         @interviews = Interview.all.select { |i| i.user_id == current_user.id}
         
         erb :'/interviews/edit_remove_interview_selection'
     end 
 
-    get '/organizer/edit-remove-interview/:id' do 
+    get '/interviews/edit/:id' do 
         @interview = Interview.find(params[:id])
         erb :'/interviews/edit_interview'
     end 
 
-    patch '/organizer/edit-remove-interview/:id' do
+    patch '/interviews/edit/:id' do
         @interview = Interview.find(params[:id])
 
         @interview.company = params[:company]
@@ -42,7 +42,7 @@ class InterviewController < ApplicationController
         redirect to '/organizer'
     end 
 
-    delete '/organizer/edit-remove-interview/:id' do 
+    delete '/interviews/edit-remove/:id' do 
         @interview = Interview.find(params[:id])
         @interview.delete 
         redirect to '/organizer'

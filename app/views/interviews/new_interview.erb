@@ -19,7 +19,7 @@
       </nav>
 
       <h1>Please fill the following to add a new interview:</h1>
-      <form method="POST" action="/organizer/add-interview">
+      <form method="POST" action="/interviews/new">
         <label class="new-text" for="company">Company:</label>
         <input class="form-input" type="text" name="company" required>
 
@@ -31,6 +31,12 @@
 
         <label class="new-text" for="time">Time of Interview:</label>
         <input class="form-input" type="time" name="time" required>
+
+        <label class="new-text" for="location">Address of Interview:</label>
+        <input class="form-input" type="text" name="location">
+
+        <label class="new-text" for="notes">Anything to note:</label>
+        <textarea class="form-input" name="notes"></textarea>
 
         <input type="submit" value="Add Interview">
       </form>
