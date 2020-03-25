@@ -33,10 +33,6 @@
                   <li>
                     <a href="/interviews/new">Add Interview</a>
                   </li>
-
-                  <li>
-                      <a href="/interviews/edit-remove">Edit/Remove</a>
-                  </li>
               </ul>
               
 
@@ -47,6 +43,7 @@
                       <th>Position</th>
                       <th>Date</th>
                       <th>Time</th>
+                      <th></th>
                   </tr>
 
                   <% @interviews.each do |i| %>
@@ -55,6 +52,7 @@
                           <td><%= i.position %></td>
                           <td><%= i.date %></td>
                           <td><%= i.time %></td>
+                          <td><a href="interviews/<%= i.id %>">View</a></td>
                       </tr>
                   <% end %>
             <% else %> 

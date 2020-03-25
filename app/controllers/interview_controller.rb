@@ -20,11 +20,9 @@ class InterviewController < ApplicationController
         redirect to '/organizer'
     end 
 
-    get '/interviews/edit-remove' do 
-        current_user = User.find(session[:user_id])
-        @interviews = Interview.all.select { |i| i.user_id == current_user.id}
-        
-        erb :'/interviews/edit_remove_interview_selection'
+    get '/interviews/:id' do 
+        @interview = Interview.find(params[:id])
+        erb :'/interviews/view'
     end 
 
     get '/interviews/edit/:id' do 
@@ -46,7 +44,7 @@ class InterviewController < ApplicationController
         redirect to '/organizer'
     end 
 
-    delete '/interviews/edit-remove/:id' do 
+    delete '/interviews/:id' do 
         @interview = Interview.find(params[:id])
         @interview.delete 
         redirect to '/organizer'
