@@ -9,7 +9,9 @@ class InterviewController < ApplicationController
             :company => params[:company],
             :position => params[:position],
             :date => params[:date],
-            :time => params[:time]
+            :time => params[:time],
+            :notes => params[:notes],
+            :location => params[:location]
         )
 
         @interview.user_id = @current_user.id 
@@ -37,6 +39,8 @@ class InterviewController < ApplicationController
         @interview.position = params[:position]
         @interview.date = params[:date]
         @interview.time = params[:time]
+        @interview.location = params[:location]
+        @interview.notes = params[:notes]
         @interview.save 
 
         redirect to '/organizer'
