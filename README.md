@@ -4,7 +4,7 @@ Jobservation is a tracker for job applications and interviews. With the built in
 
 # Installation
 
-To install this project, fork and clone this repo to get it, and then run `bundle install` to get all the gems required to run this project. To test and run, use the [shotgun gem](https://github.com/rtomayko/shotgun), which is already installed through running bundle install, and in the terminal type in `shotgun` to run the project.
+To install this project, fork and clone this repo to get it, and then run `bundle install` to get all the gems required to run this project. To test and run, use the [shotgun gem](https://github.com/rtomayko/shotgun), which is already installed through running `bundle install`, and in the terminal type in `shotgun` to run the project.
 
 # Contributing
 
