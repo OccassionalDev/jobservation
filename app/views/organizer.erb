@@ -44,6 +44,8 @@
                       <th>Date</th>
                       <th>Time</th>
                       <th></th>
+                      <th></th>
+                      <th></th>
                   </tr>
 
                   <% @interviews.each do |i| %>
@@ -53,6 +55,13 @@
                           <td><%= i.date %></td>
                           <td><%= i.time %></td>
                           <td><a href="interviews/<%= i.id %>">View</a></td>
+                          <td><a href="/interviews/edit/<%= i.id %>">Edit</a></td>
+                          <td>
+                            <form action="/interviews/<%= i.id %>" method="post">
+                              <input id="hidden" type="hidden" name="_method" value="delete">
+                              <input type="submit" value="Remove">
+                          </form>
+                        </td>
                       </tr>
                   <% end %>
             <% else %> 
@@ -80,6 +89,8 @@
                       <th>Date</th>
                       <th>Status</th>
                       <th></th>
+                      <th></th>
+                      <th></th>
                   </tr>
 
                   <% @applications.each do |a| %>
@@ -89,6 +100,13 @@
                         <td><%= a.date %></td>
                         <td><%= a.status %></td>
                         <td><a href="applications/<%= a.id %>">View</a></td>
+                        <td><a href="/applications/edit/<%= a.id %>">Edit</a></td>
+                          <td>
+                            <form action="/applications/<%= a.id %>" method="post">
+                              <input id="hidden" type="hidden" name="_method" value="delete">
+                              <input type="submit" value="Remove">
+                          </form>
+                        </td>
                     </tr>
                   <% end %>
                 <% else %>
