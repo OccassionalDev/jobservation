@@ -70,10 +70,6 @@
                 <li>
                   <a href="/applications/new">Add Application</a>
                 </li>
-
-                <li>
-                    <a href="/applications/edit-remove">Edit/Remove</a>
-                </li>
             </ul>
 
             <% if @applications != [] %>
@@ -83,6 +79,7 @@
                       <th>Position</th>
                       <th>Date</th>
                       <th>Status</th>
+                      <th></th>
                   </tr>
 
                   <% @applications.each do |a| %>
@@ -91,6 +88,7 @@
                         <td><%= a.position %></td>
                         <td><%= a.date %></td>
                         <td><%= a.status %></td>
+                        <td><a href="applications/<%= a.id %>">View</a></td>
                     </tr>
                   <% end %>
                 <% else %>

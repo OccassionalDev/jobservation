@@ -18,11 +18,9 @@ class JobApplicationController < ApplicationController
         redirect to '/organizer'
     end 
 
-    get '/applications/edit-remove' do 
-        current_user = User.find(session[:user_id])
-        @applications = Application.all.select { |i| i.user_id == current_user.id}
-        
-        erb :'/applications/edit_remove_application_selection'
+    get '/applications/:id' do 
+        @application = Application.find(params[:id])
+        erb :'/applications/view'
     end 
 
     get '/applications/edit/:id' do 
@@ -42,7 +40,7 @@ class JobApplicationController < ApplicationController
         redirect to '/organizer'
     end 
 
-    delete '/applications/edit-remove/:id' do 
+    delete '/applications/:id' do 
         @application = Application.find(params[:id])
         @application.delete 
         redirect to '/organizer'
