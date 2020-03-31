@@ -1,10 +1,9 @@
 class InterviewController < ApplicationController   
     get '/interviews/new' do
-        erb :'/interviews/new_interview'
+        erb :'/interviews/new_interview', :layout => :user_layout
     end 
 
     post '/interviews/new' do 
-        @current_user = User.find(session[:user_id])
         @interview = Interview.new(
             :company => params[:company],
             :position => params[:position],
@@ -14,25 +13,28 @@ class InterviewController < ApplicationController
             :location => params[:location]
         )
 
-        @interview.user_id = @current_user.id 
+        @interview.user_id = current_user.id
         @interview.save
 
-        redirect to '/organizer'
+        redirect to '/organizer' 
     end 
 
     get '/interviews/:id' do 
         @interview = Interview.find(params[:id])
-        erb :'/interviews/view'
+        erb :'/interviews/view', :layout => :user_layout
     end 
 
-    get '/interviews/edit/:id' do 
+    get '/interviews/:id/edit' do 
         @interview = Interview.find(params[:id])
-        erb :'/interviews/edit_interview'
+
+        can_view_edit_or_delete?(@interview.id)
+        erb :'/interviews/edit_interview', :layout => :user_layout
     end 
 
-    patch '/interviews/edit/:id' do
+    patch '/interviews/:id' do
         @interview = Interview.find(params[:id])
-
+        
+        can_view_edit_or_delete?(@interview.id)
         @interview.company = params[:company]
         @interview.position = params[:position]
         @interview.date = params[:date]
@@ -46,6 +48,7 @@ class InterviewController < ApplicationController
 
     delete '/interviews/:id' do 
         @interview = Interview.find(params[:id])
+        can_view_edit_or_delete?(@interview.id)
         @interview.delete 
         redirect to '/organizer'
     end 

@@ -35,6 +35,47 @@ body {
   background-color: rgba(45, 180, 155, 0.212);
 }
 
+.welcome-info {
+  height: 65%;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  width: 65%;
+  background: #F8F8F8;
+  border-radius: 18px;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.welcome-info h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.welcome-info p {
+  font-size: 2em;
+  width: 75%;
+  margin: 1em auto;
+}
+
+.welcome-info #sign-up-button {
+  background: #2ED16F;
+  color: white;
+  font-size: 1.5em;
+  padding: 1em;
+  margin: 1em 0;
+  display: inline-block;
+  border-radius: 18px;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .login-box {
   height: 25%;
   padding-top: 2em;
@@ -50,7 +91,7 @@ body {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.login-box h1 {
+.login-box #login-welcome {
   text-align: center;
 }
 
@@ -90,6 +131,61 @@ body {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.sign-up-box {
+  height: 25%;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 35%;
+  background: #F8F8F8;
+  border-radius: 18px;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sign-up-box h1, .sign-up-box h2 {
+  text-align: center;
+}
+
+.sign-up-box #invalid-email {
+  text-align: center;
+  color: red;
+}
+
+.sign-up-box .sign-up-form {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: 15px;
+}
+
+.sign-up-box .sign-up-form input[type=password] {
+  position: absolute;
+}
+
+.sign-up-box .sign-up-form input[type=submit] {
+  background: #2ED16F;
+  color: white;
+  position: relative;
+  top: 30px;
+  bottom: 10px;
+  left: 45px;
+  border: none;
+  font-size: 1em;
+  padding: 1em;
+  margin: 1em 0;
+  display: inline-block;
+  border-radius: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 body::after {
   content: '';
   display: block;
@@ -111,4 +207,4 @@ footer p {
   font-size: 1em;
   padding-left: 2em;
 }
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=layout.css.map */

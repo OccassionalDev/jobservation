@@ -48,10 +48,9 @@ class ApplicationController < Sinatra::Base
     end 
 
     get '/organizer' do 
-        current_user = User.find(session[:user_id])
-        @interviews = Interview.all.select { |i| i.user_id == current_user.id}
-        @applications = Application.all.select { |a| a.user_id == current_user.id}
-        erb :organizer 
+        @interviews = current_user.interviews
+        @applications = current_user.applications
+        erb :organizer, :layout => :user_layout
     end 
 
     get '/login-failure' do 
@@ -66,6 +65,20 @@ class ApplicationController < Sinatra::Base
     helpers do 
         def current_user 
             User.find(session[:user_id])
+        end 
+
+        def is_logged_in?(session)
+            !!session[:user_id]
+        end 
+
+        def is_owner?(id)
+            current_user.id == id 
+        end
+        
+        def can_view_edit_or_delete?(id)
+            if !is_owner?(id)
+                redirect to '/organizer', :layout => :user_layout
+            end 
         end 
     end 
 end 

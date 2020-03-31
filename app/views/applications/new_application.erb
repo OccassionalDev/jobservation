@@ -1,48 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobservation - New Application</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/current_layout.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav>
-        <ul id="nav-bar">
-          <li>
-            <a href="/organizer" class="nav-bar-link">Home</a>
-          </li>
+<h1>Please fill the following to add a new application:</h1>
+<form method="POST" action="/applications/new">
+  <label class="new-text" for="company">Company:</label>
+  <input class="form-input" type="text" name="company" required>
 
-          <li>
-              <a href="/logout" class="nav-bar-link">Logout</a>
-          </li>
-        </ul>
-      </nav>
+  <label class="form-text" for="position">Position:</label>
+  <input class="form-input" type="text" name="position" required>
 
-      <h1>Please fill the following to add a new application:</h1>
-      <form method="POST" action="/applications/new">
-        <label class="new-text" for="company">Company:</label>
-        <input class="form-input" type="text" name="company" required>
+  <label class="new-text" for="date">Date when Applied:</label>
+  <input class="form-input" type="date" name="date" required>
 
-        <label class="form-text" for="position">Position:</label>
-        <input class="form-input" type="text" name="position" required>
+  <label class="new-text" for="status">Status of Application:</label>
+      <select name="status" id="status-box">
+          <option value="Pending" selected>Pending</option>
+          <option value="Interview to be scheduled">Interview to be Scheduled</option>
+          <option value="Scheduled Interview">Interview Scheduled</option>
+      </select>
 
-        <label class="new-text" for="date">Date when Applied:</label>
-        <input class="form-input" type="date" name="date" required>
-
-        <label class="new-text" for="status">Status of Application:</label>
-            <select name="status" id="status-box">
-                <option value="Pending" selected>Pending</option>
-                <option value="Interview to be scheduled">Interview to be Scheduled</option>
-                <option value="Scheduled Interview">Interview Scheduled</option>
-            </select>
-
-        <input type="submit" value="Add Application">
-      </form>
-
-      <footer>
-        <p id="footer-text">Jobservation 2020</p>
-      </footer> 
-</body>
-</html>
+  <input type="submit" value="Add Application">
+</form>

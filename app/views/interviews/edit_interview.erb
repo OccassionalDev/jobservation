@@ -24,7 +24,7 @@
     </header>
 
     <section class="edit-form">
-        <form action="/interviews/edit/<%= @interview.id %>" method="POST">
+        <form action="/interviews/<%= @interview.id %>" method="POST">
             <input id="hidden" type="hidden" name="_method" value="patch">
             
             <label class="edit-label" for="company">Company:</label>

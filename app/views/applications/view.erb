@@ -1,44 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobservation - View Application</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/current_layout.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <ul id="nav-bar">
-        <li>
-          <a href="/organizer" class="nav-bar-link">Home</a>
-        </li>
+<div id="application-information">
+    <h1><%= @application.user.name %>'s Application With <%= @application.company %></h1>
+    <p><strong>Company:</strong> <%= @application.company %></p>
 
-        <li>
-            <a href="/logout" class="nav-bar-link">Logout</a>
-        </li>
-      </ul>
-    </nav>
+    <p><strong>Position:</strong> <%= @application.position %></p>
 
-    <div id="application-information">
-        <h1>Application Information</h1>
+    <p><strong>Date Applied:</strong> <%= @application.date %></p>
 
-        <p><strong>Company:</strong> <%= @application.company %></p>
+    <p><strong>Status of Application:</strong> <%= @application.status %></p>
 
-        <p><strong>Position:</strong> <%= @application.position %></p>
-
-        <p><strong>Date Applied:</strong> <%= @application.date %></p>
-
-        <p><strong>Status of Application:</strong> <%= @application.status %></p>
-
-        <a href="/applications/edit/<%= @application.id %>">Edit</a>
-              
-        <form action="/applications/<%= @application.id %>" method="post">
-            <input id="hidden" type="hidden" name="_method" value="delete">
-            <input type="submit" value="Remove">
-        </form>
-    </div>
-    <footer>
-        <p id="footer-text">Jobservation 2020</p>
-    </footer> 
-</body>
-</html>
+    <a href="/applications/<%= @application.id %>/edit">Edit</a>
+            
+    <form action="/applications/<%= @application.id %>" method="post">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="Remove">
+    </form>
+</div>

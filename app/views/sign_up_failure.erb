@@ -1,49 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobservation - Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/sign_up.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav>
-        <ul id="nav-bar">
-          <li>
-            <a href="/" class="nav-bar-link">Home</a>
-          </li>
-    
-          <li>
-            <a href="/login" class="nav-bar-link">Login</a>
-          </li>
-        </ul>
-      </nav>
-    
-      <div class="sign-up-box">
-        <h1>Welcome!</h1>
-        <h2>Please fill out the following:</h2>
-        <h3 id="invalid-email">Email has already been taken.</h3>
+<div class="sign-up-box">
+  <h1>Welcome!</h1>
+  <h2>Please fill out the following:</h2>
+  <h3 id="invalid-email">Email has already been taken.</h3>
 
-        <div class="sign-up-form">
-            <form action="/sign-up" method="POST">
-                <p class="sign-up-text">Name:</p>
-                <input id="input-box" type="text" name="name" required>
+  <div class="sign-up-form">
+      <form action="/sign-up" method="POST">
+          <p class="sign-up-text">Name:</p>
+          <input id="input-box" type="text" name="name" required>
 
-                <p class="sign-up-text">Email:</p>
-                <input class="input-box" type="email" name="email" required>
-                
-                <p class="sign-up-text">Password:</p>
-                <input class="input-box" type="password" name="password" required>
+          <p class="sign-up-text">Email:</p>
+          <input class="input-box" type="email" name="email" required>
+          
+          <p class="sign-up-text">Password:</p>
+          <input class="input-box" type="password" name="password" required>
 
-                <input type="submit" value="Sign Up">
-            </form>
-        </div>
-      </div>
-    
-
-      <footer>
-        <p id="footer-text">Jobservation 2020</p>
-      </footer>  
-</body>
-</html>
+          <input type="submit" value="Sign Up">
+      </form>
+  </div>
+</div>

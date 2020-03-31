@@ -1,49 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobservation - View Interview</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/current_layout.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <ul id="nav-bar">
-        <li>
-          <a href="/organizer" class="nav-bar-link">Home</a>
-        </li>
+<div id="interview-information">
+    <h1>Interview Information</h1>
 
-        <li>
-            <a href="/logout" class="nav-bar-link">Logout</a>
-        </li>
-      </ul>
-    </nav>
+    <p><%= @interview.user.name %>'s Interview</p>
 
-    <div id="interview-information">
-        <h1>Interview Information</h1>
+    <p><strong>Company:</strong> <%= @interview.company %></p>
 
-        <p><strong>Company:</strong> <%= @interview.company %></p>
+    <p><strong>Position:</strong> <%= @interview.position %></p>
 
-        <p><strong>Position:</strong> <%= @interview.position %></p>
+    <p><strong>Date of Interview:</strong> <%= @interview.date %></p>
 
-        <p><strong>Date of Interview:</strong> <%= @interview.date %></p>
+    <p><strong>Time of Interview:</strong> <%= @interview.time %></p>
 
-        <p><strong>Time of Interview:</strong> <%= @interview.time %></p>
+    <p><strong>Location:</strong> <%= @interview.location %></p>
 
-        <p><strong>Location:</strong> <%= @interview.location %></p>
+    <p><strong>Things to Note:</strong></p>
+    <p><%= @interview.notes %></p>
 
-        <p><strong>Things to Note:</strong></p>
-        <p><%= @interview.notes %></p>
-
-        <a href="/interviews/edit/<%= @interview.id %>">Edit</a>
-              
-        <form action="/interviews/<%= @interview.id %>" method="post">
-            <input id="hidden" type="hidden" name="_method" value="delete">
-            <input type="submit" value="Remove">
-        </form>
-    </div>
-    <footer>
-        <p id="footer-text">Jobservation 2020</p>
-    </footer> 
-</body>
-</html>
+    <a href="/interviews/<%= @interview.id %>/edit">Edit</a>
+            
+    <form action="/interviews/<%= @interview.id %>" method="post">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="Remove">
+    </form>
+</div>
