@@ -62,6 +62,7 @@ class JobApplicationController < ApplicationController
         @application = Application.find(params[:id])
 
         can_view_edit_or_delete?(@application.user_id, "delete this application")
+        flash[:success] = "Success! Application with #{@application.company} was deleted."
         @application.delete 
         redirect to "/organizer"
     end 

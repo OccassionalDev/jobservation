@@ -1,6 +1,6 @@
 <% if is_logged_in?(session) && session[:user_id] == @interview.user.id %>
     <div id="interview-information">
-        <h1><%= @interview.user.name %>'s Application With <%= @interview.company %></h1>
+        <h1><%= @interview.user.name %>'s Interview With <%= @interview.company %></h1>
 
         <p><strong>Company:</strong> <%= @interview.company %></p>
 
