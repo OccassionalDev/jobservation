@@ -11,17 +11,29 @@
     
     <nav>
         <ul id="nav-bar">
-          <li>
-            <a href="/organizer" class="nav-bar-link">Home</a>
-          </li>
-
           <% if is_logged_in?(session) %>
             <li>
-                <a href="/logout" id="logout-link" class="nav-bar-link">Logout</a>
+              <a href="/organizer" class="nav-bar-link">Home</a>
             </li>
+
+            
+              <li>
+                  <a href="/logout" id="logout-link" class="nav-bar-link">Logout</a>
+              </li>
+
+              <% else %>
+              <li>
+                <a href="/" class="nav-bar-link">Home</a>
+              </li>
           <% end %>
         </ul>
       </nav>
+
+      <% flash.keys.each do |type| %>
+        <div data-alert class="flash <%= type %> alert-box radius">
+          <%= flash[type] %>
+      </div>
+    <% end %>
 
       <%= yield %>
 

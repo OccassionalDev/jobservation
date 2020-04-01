@@ -1,56 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobservation - Edit Interview</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/current_layout.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <ul id="nav-bar">
-        <li>
-          <a href="/organizer" class="nav-bar-link">Home</a>
-        </li>
-  
-        <li>
-            <a href="/logout" class="nav-bar-link">Logout</a>
-        </li>
-      </ul>
-    </nav>
+<header>
+    <h1>Fill out the following to edit:</h1>
+</header>
 
-    <header>
-        <h1>Fill out the following to edit:</h1>
-    </header>
+<section class="edit-form">
+    <form action="/interviews/<%= @interview.id %>" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="patch">
+        
+        <label class="edit-label" for="company">Company:</label>
+        <input class="edit-input" type="text" name="company" value="<%= @interview.company %>" required>
 
-    <section class="edit-form">
-        <form action="/interviews/<%= @interview.id %>" method="POST">
-            <input id="hidden" type="hidden" name="_method" value="patch">
-            
-            <label class="edit-label" for="company">Company:</label>
-            <input class="edit-input" type="text" name="company" value="<%= @interview.company %>" required>
+        <label class="edit-label" for="position">Position:</label>
+        <input class="edit-input" type="text" name="position" value="<%= @interview.position %>" required>
 
-            <label class="edit-label" for="position">Position:</label>
-            <input class="edit-input" type="text" name="position" value="<%= @interview.position %>" required>
+        <label class="edit-label" for="date">Date:</label>
+        <input class="edit-input" type="date" name="date" value="<%= @interview.date %>" required>
 
-            <label class="edit-label" for="date">Date:</label>
-            <input class="edit-input" type="date" name="date" value="<%= @interview.date %>" required>
+        <label class="edit-label" for="time">Time:</label>
+        <input class="edit-input" type="time" name="time" value="<%= @interview.time %>" required>
 
-            <label class="edit-label" for="time">Time:</label>
-            <input class="edit-input" type="time" name="time" value="<%= @interview.time %>" required>
+        <label class="edit-label" for="location">Location:</label>
+        <input class="edit-input" type="text" name="location" value="<%= @interview.location %>" required>
 
-            <label class="edit-label" for="location">Location:</label>
-            <input class="edit-input" type="text" name="location" value="<%= @interview.location %>" required>
+        <label class="edit-label" for="notes">Anything to Note:</label>
+        <textarea class="edit-input" name="notes"><%= @interview.notes %></textarea>
 
-            <label class="edit-label" for="notes">Anything to Note:</label>
-            <textarea class="edit-input" name="notes"><%= @interview.notes %></textarea>
-
-            <input type="submit" value="Save Changes">
-        </form>
-    </section>
-
-    <footer>
-        <p id="footer-text">Jobservation 2020</p>
-    </footer> 
-</body>
-</html>
+        <input type="submit" value="Save Changes">
+    </form>
+</section>

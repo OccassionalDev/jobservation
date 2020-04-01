@@ -1,30 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobservation - Edit Application</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/current_layout.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <ul id="nav-bar">
-        <li>
-          <a href="/organizer" class="nav-bar-link">Home</a>
-        </li>
-  
-        <li>
-            <a href="/logout" class="nav-bar-link">Logout</a>
-        </li>
-      </ul>
-    </nav>
-
     <header>
         <h1>Fill out the following to edit:</h1>
     </header>
 
     <section class="edit-form">
-        <form action="/applications/<%= @application.id %>/edit" method="POST">
+        <form action="/applications/<%= @application.id %>" method="POST">
             <input id="hidden" type="hidden" name="_method" value="patch">
             
             <label class="edit-label" for="company">Company:</label>
@@ -46,9 +25,3 @@
             <input type="submit" value="Save Changes">
         </form>
     </section>
-
-    <footer>
-        <p id="footer-text">Jobservation 2020</p>
-    </footer> 
-</body>
-</html>

@@ -5,65 +5,60 @@ class ApplicationController < Sinatra::Base
         set :views, "app/views"
         enable :sessions
         set :session_secret, "jobservation"
+        register Sinatra::Flash
     end
 
-    get '/' do 
+    get "/" do 
         erb :index
     end 
 
-    get '/sign-up' do 
+    get "/sign-up" do 
         erb :sign_up
     end 
 
-    post '/sign-up' do 
+    post "/sign-up" do 
         user = User.new(:name => params[:name], :email => params[:email], :password => params[:password])
 
         if user.save 
             session[:user_id] = user.id
-            redirect to '/login'
+            redirect to "/login"
 
         else 
-            redirect to '/sign-up-failure'
+            flash[:sign_up_failure] = "Email has already been taken. Please enter another email address."
+            redirect to "/sign-up"
         end 
     end 
 
-    get '/sign-up-failure' do 
-        erb :sign_up_failure
-    end 
-
-    get '/login' do 
+    get "/login" do 
         erb :login
     end 
 
-    post '/login' do 
+    post "/login" do 
         user = User.find_by(:email => params[:email])
 
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id 
-            redirect to '/organizer'
+            redirect to "/organizer"
 
         else 
-            redirect to '/login-failure'
+            flash[:login_failure] = "An invalid email or password has been entered."
+            redirect to "/login"
         end 
     end 
 
-    get '/organizer' do 
+    get "/organizer" do 
         @interviews = current_user.interviews
         @applications = current_user.applications
         erb :organizer, :layout => :user_layout
     end 
 
-    get '/login-failure' do 
-        erb :login_failure
-    end 
-
-    get '/logout' do 
+    get "/logout" do 
         session.clear
-        redirect to '/'
+        redirect to "/"
     end 
 
     helpers do 
-        def current_user 
+        def current_user
             User.find(session[:user_id])
         end 
 
@@ -75,9 +70,10 @@ class ApplicationController < Sinatra::Base
             current_user.id == id 
         end
         
-        def can_view_edit_or_delete?(id)
+        def can_view_edit_or_delete?(id, ability_type)
             if !is_owner?(id)
-                redirect to '/organizer', :layout => :user_layout
+                flash[:warning] = "Warning: You do not have the ability to #{ability_type}."
+                redirect to "/organizer", :layout => :user_layout
             end 
         end 
     end 

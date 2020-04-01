@@ -1,25 +1,27 @@
-<div id="interview-information">
-    <h1>Interview Information</h1>
+<% if is_logged_in?(session) && session[:user_id] == @interview.user.id %>
+    <div id="interview-information">
+        <h1><%= @interview.user.name %>'s Application With <%= @interview.company %></h1>
 
-    <p><%= @interview.user.name %>'s Interview</p>
+        <p><strong>Company:</strong> <%= @interview.company %></p>
 
-    <p><strong>Company:</strong> <%= @interview.company %></p>
+        <p><strong>Position:</strong> <%= @interview.position %></p>
 
-    <p><strong>Position:</strong> <%= @interview.position %></p>
+        <p><strong>Date of Interview:</strong> <%= @interview.date %></p>
 
-    <p><strong>Date of Interview:</strong> <%= @interview.date %></p>
+        <p><strong>Time of Interview:</strong> <%= @interview.time %></p>
 
-    <p><strong>Time of Interview:</strong> <%= @interview.time %></p>
+        <p><strong>Location:</strong> <%= @interview.location %></p>
 
-    <p><strong>Location:</strong> <%= @interview.location %></p>
+        <% if @interview.notes != nil || @interview.notes != "" %>
+            <p><strong>Things to Note:</strong></p>
+            <p><%= @interview.notes %></p>
+        <% end %>
 
-    <p><strong>Things to Note:</strong></p>
-    <p><%= @interview.notes %></p>
-
-    <a href="/interviews/<%= @interview.id %>/edit">Edit</a>
-            
-    <form action="/interviews/<%= @interview.id %>" method="post">
-        <input id="hidden" type="hidden" name="_method" value="delete">
-        <input type="submit" value="Remove">
-    </form>
-</div>
+        <a href="/interviews/<%= @interview.id %>/edit">Edit</a>
+                
+        <form action="/interviews/<%= @interview.id %>" method="post">
+            <input id="hidden" type="hidden" name="_method" value="delete">
+            <input type="submit" value="Remove">
+        </form>
+    </div>
+<% end %>

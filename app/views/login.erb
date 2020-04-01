@@ -1,5 +1,9 @@
 <div class="login-box">
   <h1 id="login-welcome">Welcome Back!</h1>
+  
+  <% if flash[:login_failure] %>
+    <p id="invalid-entry"><%= flash[:login_failure] %></p>
+  <% end %>
 
   <div class="login-form">
       <form action="/login" method="POST">

@@ -1,49 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobservation - Add Interview</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/current_layout.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav>
-        <ul id="nav-bar">
-          <li>
-            <a href="/organizer" class="nav-bar-link">Home</a>
-          </li>
+<h1>Please fill the following to add a new interview:</h1>
+<form method="POST" action="/interviews">
+  <label class="new-text" for="company">Company:</label>
+  <input class="form-input" type="text" name="company" required>
 
-          <li>
-              <a href="/logout" class="nav-bar-link">Logout</a>
-          </li>
-        </ul>
-      </nav>
+  <label class="form-text" for="position">Position:</label>
+  <input class="form-input" type="text" name="position" required>
 
-      <h1>Please fill the following to add a new interview:</h1>
-      <form method="POST" action="/interviews/new">
-        <label class="new-text" for="company">Company:</label>
-        <input class="form-input" type="text" name="company" required>
+  <label class="new-text" for="date">Date of Interview:</label>
+  <input class="form-input" type="date" name="date" required>
 
-        <label class="form-text" for="position">Position:</label>
-        <input class="form-input" type="text" name="position" required>
+  <label class="new-text" for="time">Time of Interview:</label>
+  <input class="form-input" type="time" name="time" required>
 
-        <label class="new-text" for="date">Date of Interview:</label>
-        <input class="form-input" type="date" name="date" required>
+  <label class="new-text" for="location">Address of Interview:</label>
+  <input class="form-input" type="text" name="location" required>
 
-        <label class="new-text" for="time">Time of Interview:</label>
-        <input class="form-input" type="time" name="time" required>
+  <label class="new-text" for="notes">Anything to Note:</label>
+  <textarea class="form-input" name="notes"></textarea>
 
-        <label class="new-text" for="location">Address of Interview:</label>
-        <input class="form-input" type="text" name="location" required>
-
-        <label class="new-text" for="notes">Anything to Note:</label>
-        <textarea class="form-input" name="notes"></textarea>
-
-        <input type="submit" value="Add Interview">
-      </form>
-
-      <footer>
-        <p id="footer-text">Jobservation 2020</p>
-      </footer> 
-</body>
+  <input type="submit" value="Add Interview">
+</form>

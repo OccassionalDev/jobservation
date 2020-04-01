@@ -1,17 +1,19 @@
-<div id="application-information">
-    <h1><%= @application.user.name %>'s Application With <%= @application.company %></h1>
-    <p><strong>Company:</strong> <%= @application.company %></p>
+<% if is_logged_in?(session) && session[:user_id] == @application.user.id %>
+    <div id="application-information">
+        <h1><%= @application.user.name %>'s Application With <%= @application.company %></h1>
+        <p><strong>Company:</strong> <%= @application.company %></p>
 
-    <p><strong>Position:</strong> <%= @application.position %></p>
+        <p><strong>Position:</strong> <%= @application.position %></p>
 
-    <p><strong>Date Applied:</strong> <%= @application.date %></p>
+        <p><strong>Date Applied:</strong> <%= @application.date %></p>
 
-    <p><strong>Status of Application:</strong> <%= @application.status %></p>
+        <p><strong>Status of Application:</strong> <%= @application.status %></p>
 
-    <a href="/applications/<%= @application.id %>/edit">Edit</a>
-            
-    <form action="/applications/<%= @application.id %>" method="post">
-        <input id="hidden" type="hidden" name="_method" value="delete">
-        <input type="submit" value="Remove">
-    </form>
-</div>
+        <a href="/applications/<%= @application.id %>/edit">Edit</a>
+                
+        <form action="/applications/<%= @application.id %>" method="post">
+            <input id="hidden" type="hidden" name="_method" value="delete">
+            <input type="submit" value="Remove">
+        </form>
+    </div>
+<% end %>
