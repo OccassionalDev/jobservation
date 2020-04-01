@@ -30,10 +30,10 @@
       </nav>
 
       <% flash.keys.each do |type| %>
-        <div data-alert class="flash <%= type %> alert-box radius">
+        <div data-alert class="flash <%= type %> alert">
           <%= flash[type] %>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
 
       <%= yield %>
 
