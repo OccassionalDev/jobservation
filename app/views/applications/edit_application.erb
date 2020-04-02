@@ -1,27 +1,28 @@
-    <header>
-        <h1>Fill out the following to edit the application:</h1>
-    </header>
+<header>
+    <h1>Edit Application</h1>
+    <h2>Fill out the following to edit the application:</h2>
+</header>
 
-    <section class="edit-form">
-        <form action="/applications/<%= @application.id %>" method="POST">
-            <input id="hidden" type="hidden" name="_method" value="patch">
-            
-            <label class="edit-label" for="company">Company:</label>
-            <input class="edit-input" type="text" name="company" value="<%= @application.company %>" required>
+<section class="edit-form">
+    <form action="/applications/<%= @application.id %>" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="patch">
+        
+        <label class="edit-label" for="company">Company:</label>
+        <input class="edit-input" type="text" name="company" value="<%= @application.company %>" required>
 
-            <label class="edit-label" for="position">Position:</label>
-            <input class="edit-input" type="text" name="position" value="<%= @application.position %>" required>
+        <label class="edit-label" for="position">Position:</label>
+        <input class="edit-input" type="text" name="position" value="<%= @application.position %>" required>
 
-            <label class="edit-label" for="date">Date:</label>
-            <input class="edit-input" type="date" name="date" value="<%= @application.date %>" required>
+        <label class="edit-label" for="date">Date:</label>
+        <input class="edit-input" type="date" name="date" value="<%= @application.date %>" required>
 
-            <label class="edit-label" for="status">Status:</label>
-            <select name="status" id="status-box">
-                <option value="Pending" selected>Pending</option>
-                <option value="Interview to be Scheduled">Interview to be Scheduled</option>
-                <option value="Scheuled Interview">Interview Scheduled</option>
-            </select>
+        <label class="edit-label" for="status">Status:</label>
+        <select name="status" id="status-box">
+            <option value="Pending" selected>Pending</option>
+            <option value="Interview to be Scheduled">Interview to be Scheduled</option>
+            <option value="Scheuled Interview">Interview Scheduled</option>
+        </select>
 
-            <input type="submit" value="Save Changes">
-        </form>
-    </section>
+        <input type="submit" value="Save Changes">
+    </form>
+</section>
