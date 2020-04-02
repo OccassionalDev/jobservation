@@ -1,4 +1,4 @@
-<% if is_logged_in?(session) && session[:user_id] == @application.user.id %>
+<% if is_logged_in?(session) && is_owner?(@application.user_id) %>
     <div id="application-information">
         <h1><%= @application.user.name %>'s Application With <%= @application.company %></h1>
         <p><strong>Company:</strong> <%= @application.company %></p>

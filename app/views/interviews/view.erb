@@ -1,4 +1,4 @@
-<% if is_logged_in?(session) && session[:user_id] == @interview.user.id %>
+<% if is_logged_in?(session) && is_owner?(@interview.user_id) %>
     <div id="interview-information">
         <h1><%= @interview.user.name %>'s Interview With <%= @interview.company %></h1>
 
