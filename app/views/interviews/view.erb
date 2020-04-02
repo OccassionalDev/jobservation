@@ -12,7 +12,7 @@
 
         <p><strong>Location:</strong> <%= @interview.location %></p>
 
-        <% if @interview.notes != nil || @interview.notes != "" %>
+        <% if !@interview.notes.empty? %>
             <p><strong>Things to Note:</strong></p>
             <p><%= @interview.notes %></p>
         <% end %>
